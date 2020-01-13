@@ -50,7 +50,7 @@
  */
 {template .title}
   {@param title: string}
-  <h1 class="title">{$title}</h1>
+  <h1 is-upgraded class="title">{$title}</h1>
 {/template}
 
 
@@ -84,11 +84,9 @@
       {/for}
     </ol>
   </div>
-  {if $feedback}
-  <div id="feedback" class="metadata">
-    <a target="_blank" href="{$feedback}">
+  <div class="metadata">
+    <a {if $feedback}target="_blank" href="{$feedback}"{else}href="#" id="codelab-feedback"{/if}>
       <i class="material-icons">bug_report</i> Report a mistake
     </a>
   </div>
-  {/if}
 {/template}
